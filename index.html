@@ -14,28 +14,31 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centrar horizontalmente */
-            justify-content: center; /* Centrar verticalmente */
-            min-height: 100vh; /* Asegura que el cuerpo ocupe al menos toda la altura del viewport */
-            position: relative; /* Posición relativa para que el texto intermitente sea relativo a este elemento */
-            font-size: 16px; /* Tamaño de fuente base */
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-size: 16px;
+            background-image: url('Logo_MAHA.jpg'); /* Añade aquí tu imagen de fondo */
+            background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+            background-position: center; /* Centra la imagen de fondo */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
         }
 
         .content {
-            flex: 1; /* El contenido ocupa todo el espacio disponible */
-            text-align: center; /* Centra el texto dentro del contenido */
-            padding: 10px; /* Añadido para evitar que el contenido toque los bordes de la pantalla */
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0); /* Fondo semitransparente para que el texto sea legible */
+            border-radius: 10px; /* Bordes redondeados */
         }
 
         .bottom-text {
             text-align: center;
-            background-color: #FFFF00; /* Fondo amarillo para el texto inferior */
+            background-color: #FFFF00;
             padding: 20px;
-            position: absolute; /* Posición absoluta para fijar el texto en la parte inferior */
-            bottom: 0; /* Lo coloca al final de la pantalla */
-            left: 0;
-            width: 100%; /* Ocupa todo el ancho disponible */
-            animation: blink 1s infinite; /* Animación para hacer que el texto intermitente */
+            width: 100%;
+            animation: blink 1s infinite;
+            position: absolute;
+            bottom: 0;
         }
 
         @keyframes blink {
@@ -53,24 +56,23 @@
         .resultado {
             color: black; 
             font-weight: bold; 
-            font-size: 10vw; /* Cambiado a unidades relativas para adaptarse a la pantalla */
-            margin: 10px 0; /* Espaciado entre la fecha y la clave */
+            font-size: 10vw;
+            margin: 10px 0;
         }
 
         .clave {
             color: black; 
             font-weight: bold; 
-            font-size: 20vw; /* Cambiado a unidades relativas para adaptarse a la pantalla */
+            font-size: 20vw;
         }
 
-        /* Media query para pantallas pequeñas */
         @media (max-width: 600px) {
             .resultado {
-                font-size: 15vw; /* Ajustado para pantallas pequeñas */
+                font-size: 15vw;
             }
 
             .clave {
-                font-size: 25vw; /* Ajustado para pantallas pequeñas */
+                font-size: 25vw;
             }
         }
     </style>
