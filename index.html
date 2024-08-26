@@ -18,16 +18,18 @@
             justify-content: center; /* Centrar verticalmente */
             min-height: 100vh; /* Asegura que el cuerpo ocupe al menos toda la altura del viewport */
             position: relative; /* Posición relativa para que el texto intermitente sea relativo a este elemento */
+            font-size: 16px; /* Tamaño de fuente base */
         }
 
         .content {
             flex: 1; /* El contenido ocupa todo el espacio disponible */
             text-align: center; /* Centra el texto dentro del contenido */
+            padding: 10px; /* Añadido para evitar que el contenido toque los bordes de la pantalla */
         }
 
         .bottom-text {
             text-align: center;
-            background-color: #FFFF00;
+            background-color: #FFFF00; /* Fondo amarillo para el texto inferior */
             padding: 20px;
             position: absolute; /* Posición absoluta para fijar el texto en la parte inferior */
             bottom: 0; /* Lo coloca al final de la pantalla */
@@ -51,14 +53,25 @@
         .resultado {
             color: black; 
             font-weight: bold; 
-            font-size: 100px;
+            font-size: 10vw; /* Cambiado a unidades relativas para adaptarse a la pantalla */
             margin: 10px 0; /* Espaciado entre la fecha y la clave */
         }
 
         .clave {
             color: black; 
             font-weight: bold; 
-            font-size: 200px;
+            font-size: 20vw; /* Cambiado a unidades relativas para adaptarse a la pantalla */
+        }
+
+        /* Media query para pantallas pequeñas */
+        @media (max-width: 600px) {
+            .resultado {
+                font-size: 15vw; /* Ajustado para pantallas pequeñas */
+            }
+
+            .clave {
+                font-size: 25vw; /* Ajustado para pantallas pequeñas */
+            }
         }
     </style>
 </head>
