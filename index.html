@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clave diaria MaHa</title>
+
+    <link rel="icon" href="MaHa.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centrar horizontalmente */
+            justify-content: center; /* Centrar verticalmente */
+            min-height: 100vh; /* Asegura que el cuerpo ocupe al menos toda la altura del viewport */
+            position: relative; /* Posición relativa para que el texto intermitente sea relativo a este elemento */
+        }
+
+        .content {
+            flex: 1; /* El contenido ocupa todo el espacio disponible */
+            text-align: center; /* Centra el texto dentro del contenido */
+        }
+
+        .bottom-text {
+            text-align: center;
+            background-color: #FFFF00;
+            padding: 20px;
+            position: absolute; /* Posición absoluta para fijar el texto en la parte inferior */
+            bottom: 0; /* Lo coloca al final de la pantalla */
+            left: 0;
+            width: 100%; /* Ocupa todo el ancho disponible */
+            animation: blink 1s infinite; /* Animación para hacer que el texto intermitente */
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .resultado {
+            color: black; 
+            font-weight: bold; 
+            font-size: 100px;
+            margin: 10px 0; /* Espaciado entre la fecha y la clave */
+        }
+
+        .clave {
+            color: black; 
+            font-weight: bold; 
+            font-size: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+   
+        <p id="fecha-resultado" class="resultado"></p>
+        <p id="clave-resultado" class="clave"></p>
+    </div>
+
+    <div class="bottom-text">
+        <p style="color: red; font-weight: bold; font-style: italic; text-decoration: underline;">Vuelva a cargar la página para asegurar que la clave corresponde a la fecha actual</p>
+    </div>
+
+    <script>
+        // Obtener la fecha actual
+        var fecha = new Date();
+        var dia = fecha.getDate();
+        var mes = fecha.getMonth() + 1; // Se suma 1 porque los meses se indexan desde 0
+        var año = fecha.getFullYear();
+
+        // Realizar la multiplicación
+        var resultado = dia * mes * año * 7.181264822134387353;
+
+        // Obtener la parte entera del resultado (clave diaria)
+        var claveDiaria = Math.floor(resultado);
+
+        // Formatear la fecha actual
+        var fechaActualTexto = " " + dia + "/" + mes + "/" + año;
+
+        // Mostrar la fecha actual
+        document.getElementById("fecha-resultado").innerHTML = fechaActualTexto;
+
+        // Mostrar la clave diaria
+        document.getElementById("clave-resultado").innerHTML = claveDiaria;
+    </script>
+</body>
+</html>
